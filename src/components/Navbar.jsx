@@ -10,7 +10,7 @@ const Navbar = () => {
   const wishlist = useSelector((state) => state.wishlist.wishlist);
   return (
     <>
-    <div className="flex justify-between items-center shadow-xl border-b-gray-400 h-16 static top-0 box-border">
+    <div className="flex justify-between items-center shadow-xl bg-white border-b-gray-400 h-16 fixed w-full top-0 box-border">
       <div className="text-2xl ml-3 text-blue-900 font-custom font-bold">
         <h6 >
     
