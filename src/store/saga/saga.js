@@ -5,7 +5,7 @@ function* fetchExampleData(action) {
     try {
       const response = yield call(()=>fetch('https://dummyjson.com/products'));
       const data = yield response.json();
-    //   console.log(data, "hehfhhd")
+     
       yield put(Fetch(data.products));
     } catch (error) {
       yield put(Error(error));

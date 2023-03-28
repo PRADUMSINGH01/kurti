@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { BsFillBagDashFill,BsSearch  ,BsFillCartCheckFill} from "react-icons/bs";
 import { MdAccountCircle } from "react-icons/md";
+import { wish } from "../store/wishlist";
+import WishList from "./WishList";
 
 const Navbar = () => {
   const wishlist = useSelector((state) => state.wishlist.wishlist);
-//   console.log("nav")
   return (
     <>
     <div className="flex justify-between items-center shadow-xl border-b-gray-400 h-16 static top-0 box-border">
@@ -31,10 +32,10 @@ const Navbar = () => {
       </div>
       <div className="flex w-[8rem] justify-between items-center  md:w-[12rem]  text-blue-900">
         <div className="flex flex-col  items-center">
-          <Link  className="font-bold text-blue-900 text-xl">
+          <Link to={'/wishList'} className="font-bold text-blue-900 text-xl">
             <BsFillBagDashFill />
           </Link>
-          <Link className="hidden md:block lg:block">WishList</Link>
+          <Link className="hidden md:block lg:block">{wishlist.length>0?wishlist.length:"wishList"}</Link>
         </div>
    
           <div className="flex flex-col  items-center">

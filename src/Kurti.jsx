@@ -6,9 +6,6 @@ const Kurti = () => {
   const data = useSelector((state) => state.API.data);
   const dispatch = useDispatch();
 
-  const list = JSON.parse(localStorage.getItem("wishList"));
-  // console.log(list)
-
   return (
     <>
       <div className="w-full flex  justify-between flex-wrap ">
@@ -25,7 +22,7 @@ const Kurti = () => {
                 className= "position w-[20rem] h-[26rem] shadow-xl rounded-xl  border-b-slate-100  flex flex-col items-center justify-between mt-16 ml-3 "
               >
                 <div className="w-[20rem] h-[16rem] rounded-xl overflow-hidden">
-                  <img src={items.thumbnail} alt="loading"></img>
+                  <img src={!items.thumbnail ?<Loading/>:items.thumbnail} alt="loading"></img>
                 </div>
                 <div className="w-[20rem] h-[3rem] overflow-hidden">
                   <h4>{items.title}</h4>
@@ -45,7 +42,7 @@ const Kurti = () => {
                   </div>
 
                   <div className="">
-                    <button onClick={() => dispatch(wish())}>Add</button>
+                    <button onClick={() => dispatch(wish(items))}>Add</button>
                   </div>
                 </div>
               </div>

@@ -10,7 +10,7 @@ export const FETCH_wish = createSlice({
     initialState,
     reducers:{
         wish:(state,action)=>{
-            state.wishlist = action.payload
+            state.wishlist.push(action.payload)
 
         },
 
