@@ -10,7 +10,7 @@ const Navbar = () => {
   const wishlist = useSelector((state) => state.wishlist.wishlist);
   return (
     <>
-    <div className="flex justify-between items-center shadow-xl bg-white border-b-gray-400 h-16 fixed w-full top-0 box-border">
+    <div className="flex justify-between items-center shadow-xl bg-white border-b-gray-400 h-16 fixed w-full top-0 box-border z-1">
       <div className="text-2xl ml-3 text-blue-900 font-custom font-bold">
         <Link to={"/"}>
         <h6 >
@@ -32,6 +32,14 @@ const Navbar = () => {
         <Link to={"/bag"}>Bag</Link>
         <Link to={"/beauty"}>Beauty</Link>
       </div>
+
+      <div className="flex md:hidden lg:hidden w-[1rem] justify-between font-custom  font-bold text-blue-900 text-lg">
+        <Link to={"/Kurti"}>Kurti</Link>
+       
+      </div>
+
+
+
       <div className="flex w-[8rem] justify-between items-center  md:w-[12rem]  text-blue-900">
         <div className="flex flex-col  items-center">
           <Link to={'/wishList'} className="font-bold text-blue-900 text-xl">

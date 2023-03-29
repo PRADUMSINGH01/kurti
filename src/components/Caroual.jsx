@@ -16,7 +16,7 @@ const Caroual = () => {
         <FiChevronLeft />{" "}
       </button>
       <div className="h-[10rem]">
-        <img src={data[slide]} alt="" className="object-contain" />
+        <img src={data[slide]} alt="" className="object-contain"  loading="lazy"/>
       </div>
       <button onClick={() => setslide(slide - 1)}>
         {" "}

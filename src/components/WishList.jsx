@@ -1,4 +1,4 @@
-import React from "react";
+import React,{memo} from "react";
 import { useSelector } from "react-redux";
 const WishList = () => {
   const wishlist = useSelector((state) => state.wishlist.wishlist);
@@ -35,4 +35,4 @@ wishlist.map((item)=>{
   );
 };
 
-export default WishList;
+export default memo(WishList);
