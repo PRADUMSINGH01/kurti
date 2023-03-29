@@ -12,10 +12,12 @@ const Navbar = () => {
     <>
     <div className="flex justify-between items-center shadow-xl bg-white border-b-gray-400 h-16 fixed w-full top-0 box-border">
       <div className="text-2xl ml-3 text-blue-900 font-custom font-bold">
+        <Link to={"/"}>
         <h6 >
     
           kurti<span className="text-blue-900 font-custom text-sm">shop.com</span>
         </h6>
+        </Link>
       </div>
       <div className="hidden md:flex lg:w-[25rem] border  border-blue-100  shadow-sm h-[2rem] ">
         <input type="text" placeholder=" search here " className="w-full outline-none placeholder:text-xl font-custom text-center uppercase text-blue-900" />
@@ -39,18 +41,18 @@ const Navbar = () => {
         </div>
    
           <div className="flex flex-col  items-center">
-            <Link  className="font-bold text-blue-900 text-xl">
+            <Link  to={'/Cart'} className="font-bold text-blue-900 text-xl">
               <BsFillCartCheckFill  className="font-bold"/>
             </Link>
-            <Link className="hidden md:block lg:block">Cart</Link>
+            <Link to={'/Cart'} className="hidden md:block lg:block">Cart</Link>
           </div>
     
 
         <div className="flex flex-col  items-center mr-5">
-          <Link  className="font-bold text-blue-900 text-xl">
+          <Link to={'/Profile'} className="font-bold text-blue-900 text-xl">
             <MdAccountCircle />
           </Link>
-          <Link className="hidden md:block lg:block">Profile</Link>
+          <Link to={'/Profile'} className="hidden md:block lg:block">Profile</Link>
         </div>
       </div>
     </div>

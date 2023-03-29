@@ -8,9 +8,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import WishList from "./components/WishList";
 import Footer from "./components/Footer";
+import Cart from "./components/Cart";
 import Caroual from "./components/Caroual";
 import Projuct from "./components/Projuct";
 import ProjectSlide from "./components/ProjectSlide";
+import New from "./components/New";
+import Login from "./components/Login";
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -21,23 +24,41 @@ function App() {
     <Router>
       <div className="">
         <Navbar />
+        <Routes>
+        {/* <Routes>
+          <Route path="/" element={<Navbar />}></Route>
+        </Routes> */}
+          <Route path="/" element={<Caroual />}></Route>
+        </Routes>
 
         <Routes>
-          <Route path="/kurti" element={<Kurti />}></Route>
+          <Route path="/" element={<Projuct />}></Route>
+        </Routes>
+        {/* <Routes>
+          <Route path="/" element={<ProjectSlide />}></Route>
+        </Routes> */}
 
+        <Routes>
+          <Route path="/" element={<Footer />}></Route>
+        </Routes>
+        <Routes>
+          <Route path="/kurti" element={<Kurti />}></Route>
+        </Routes>
+
+        <Routes>
           <Route path="/wishList" element={<WishList />} />
         </Routes>
 
-        <Caroual />
+        <Routes>
+          <Route path="/Cart" element={<Cart />} />
+        </Routes>
 
-        <Projuct />
-        
-        <ProjectSlide/>
-        
+        <Routes>
+          <Route path="/Profile" element={<Login />} />
+        </Routes>
 
-        <Projuct />
+
       </div>
-      <Footer />
     </Router>
   );
 }
