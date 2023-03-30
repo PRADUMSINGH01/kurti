@@ -17,10 +17,10 @@ const Kurti = () => {
           ? data.map((items) => {
               return (
                 <>
-                  <div className="mt-40 ml-10 md:ml-0 ">
+                  <div className="mt-40 ml-10 md:ml-0 items-center">
                     <a
                       href={items.id}
-                      class="group  mb-2 block h-80 overflow-hidden rounded-lg bg-gray-100 lg:mb-3"
+                      className="group  mb-2 block h-80 overflow-hidden rounded-lg bg-gray-100 lg:mb-3"
                     >
                       <img
                         src={items.thumbnail}
@@ -30,7 +30,7 @@ const Kurti = () => {
                       />
                     </a>
 
-                    <div>
+                    <div className="text-center">
                       <a
                         href="#"
                         class="hover:gray-800 mb-1 text-gray-500 transition duration-100 lg:text-lg"
@@ -38,7 +38,7 @@ const Kurti = () => {
                         {items.brand}
                       </a>
 
-                      <div class="flex items-end gap-2">
+                      <div className="flex items-end gap-2">
                         <span class="font-bold text-gray-800 lg:text-lg">
                           Rupees: {items.price}
                         </span>
@@ -56,7 +56,7 @@ const Kurti = () => {
                 </>
               );
             })
-          : ""}
+          : <Loading/>}
       </div>
     </div>
   );

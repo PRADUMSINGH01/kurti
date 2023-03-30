@@ -3,7 +3,7 @@ import { Fetch } from "./store/slice";
 import { useEffect, useState } from "react";
 import Kurti from "./Kurti";
 import { useDispatch } from "react-redux";
-
+import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import WishList from "./components/WishList";
@@ -14,6 +14,7 @@ import Projuct from "./components/Projuct";
 import ProjectSlide from "./components/ProjectSlide";
 import New from "./components/New";
 import Login from "./components/Login";
+import NoMatch from "./components/NoMatch";
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -21,8 +22,9 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <div className="">
+        <Router>
+        <Suspense fallback={<div className="container">Loading...</div>}></Suspense>
+    <div className="">
         <Navbar />
         <Routes>
         {/* <Routes>
@@ -57,6 +59,9 @@ function App() {
           <Route path="/Profile" element={<Login />} />
         </Routes>
 
+        <Routes>
+        <Route path="*" element={<NoMatch />} />
+        </Routes>
 
       </div>
     </Router>
